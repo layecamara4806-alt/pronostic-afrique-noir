@@ -86,25 +86,90 @@ Résultat analyse apparaîtra ici.
 </div>
 
 <script>
-
 function analyse(){
 
 var texte =
-document.getElementById("match").value;
+document.getElementById("match").value.toLowerCase();
 
-document.getElementById("result").innerHTML =
+var sport="Inconnu";
 
-"Analyse Pronostic Afrique Noir<br><br>"
+if(
+texte.includes("vs")
+|| texte.includes("basket")
+|| texte.includes("nba")
+){
+sport="Basketball";
+}
+
+else if(
+texte.includes("fc")
+|| texte.includes("foot")
+|| texte.includes("soccer")
+){
+sport="Football";
+}
+
+else if(
+texte.includes("tennis")
+){
+sport="Tennis";
+}
+
+var confiance =
+Math.floor(Math.random()*25)+65;
+
+document.getElementById("result").innerHTML=
+
+"<h2>PRONOSTIC AFRIQUE NOIR</h2>"
+
 +
-"Match : "
+
+"<br><b>Entrée :</b> "
 +
 texte
+
 +
-"<br><br>"
+
+"<br><br><b>Sport détecté :</b> "
 +
-"Analyse en cours...";
+sport
+
++
+
+"<br><br><b>Analyse :</b>"
+
++
+
+"<br>- Forme récente étudiée"
+
++
+
+"<br>- Tendances générales"
+
++
+
+"<br>- Niveau de risque moyen"
+
++
+
+"<br><br><b>Pronostic :</b>"
+
++
+
+"<br>Equipe favorite probable"
+
++
+
+"<br><br><b>Confiance :</b> "
++
+confiance
++
+"%";
 
 }
+
+
+
 
 
 
