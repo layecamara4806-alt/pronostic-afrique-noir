@@ -86,91 +86,54 @@ Résultat analyse apparaîtra ici.
 </div>
 
 <script>
-  function analyse(){
+ function analyse() {
 
-var texte =
-document.getElementById("match").value.toLowerCase();
+var texte = document.getElementById("match").value;
 
-var sport="Sport inconnu";
+var sport = "Sport inconnu";
 
-if(
-texte.includes("milan")
-|| texte.includes("real")
-|| texte.includes("barcelona")
-|| texte.includes("united")
-|| texte.includes("fc")
-|| texte.includes("inter")
-|| texte.includes("psg")
-){
-sport="Football ⚽";
+var t = texte.toLowerCase();
+
+if (t.includes("inter") || t.includes("milan") || t.includes("psg") || t.includes("real")) {
+
+sport = "Football ⚽";
+
 }
 
-else if(
-texte.includes("lakers")
-|| texte.includes("nba")
-|| texte.includes("boston")
-|| texte.includes("warriors")
-){
-sport="Basketball 🏀";
+else if (t.includes("lakers") || t.includes("nba") || t.includes("boston")) {
+
+sport = "Basketball 🏀";
+
 }
 
-else if(
-texte.includes("djokovic")
-|| texte.includes("nadal")
-|| texte.includes("tennis")
-){
-sport="Tennis 🎾";
+else if (t.includes("djokovic") || t.includes("nadal")) {
+
+sport = "Tennis 🎾";
+
 }
 
-var confiance =
-Math.floor(Math.random()*25)+65;
+var confiance = Math.floor(Math.random()*25)+65;
 
-document.getElementById("result").innerHTML=
+document.getElementById("result").innerHTML =
 
-"<h2>PRONOSTIC AFRIQUE NOIR</h2>"
+"<h2>PRONOSTIC AFRIQUE NOIR</h2>" +
 
-+
+"<br>Entrée : " + texte +
 
-"<br><b>Entrée :</b> "
-+
-texte
+"<br><br>Sport détecté : " + sport +
 
-+
+"<br><br>Analyse :" +
 
-"<br><br><b>Sport détecté :</b> "
-+
-sport
+"<br>- Forme récente étudiée" +
 
-+
+"<br>- Tendances générales" +
 
-"<br><br><b>Analyse :</b>"
+"<br>- Niveau de risque moyen" +
 
-+
+"<br><br>Pronostic :" +
 
-"<br>- Forme récente étudiée"
+"<br>Equipe favorite probable" +
 
-+
-
-"<br>- Tendances générales"
-
-+
-
-"<br>- Niveau de risque moyen"
-
-+
-
-"<br><br><b>Pronostic :</b>"
-
-+
-
-"<br>Equipe favorite probable"
-
-+
-
-"<br><br><b>Confiance :</b> "
-+
-confiance
-+
-"%";
+"<br><br>Confiance : " + confiance + "%";
 
 }
