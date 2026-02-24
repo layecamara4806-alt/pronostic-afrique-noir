@@ -86,33 +86,40 @@ Résultat analyse apparaîtra ici.
 </div>
 
 <script>
-function analyse(){
+  function analyse(){
 
 var texte =
 document.getElementById("match").value.toLowerCase();
 
-var sport="Inconnu";
+var sport="Sport inconnu";
 
 if(
-texte.includes("vs")
-|| texte.includes("basket")
+texte.includes("milan")
+|| texte.includes("real")
+|| texte.includes("barcelona")
+|| texte.includes("united")
+|| texte.includes("fc")
+|| texte.includes("inter")
+|| texte.includes("psg")
+){
+sport="Football ⚽";
+}
+
+else if(
+texte.includes("lakers")
 || texte.includes("nba")
+|| texte.includes("boston")
+|| texte.includes("warriors")
 ){
-sport="Basketball";
+sport="Basketball 🏀";
 }
 
 else if(
-texte.includes("fc")
-|| texte.includes("foot")
-|| texte.includes("soccer")
+texte.includes("djokovic")
+|| texte.includes("nadal")
+|| texte.includes("tennis")
 ){
-sport="Football";
-}
-
-else if(
-texte.includes("tennis")
-){
-sport="Tennis";
+sport="Tennis 🎾";
 }
 
 var confiance =
@@ -167,32 +174,3 @@ confiance
 "%";
 
 }
-
-
-
-
-
-
-function chatgpt(){
-
-window.open("https://chat.openai.com");
-
-}
-
-function gemini(){
-
-window.open("https://aistudio.google.com");
-
-}
-
-function perplexity(){
-
-window.open("https://perplexity.ai");
-
-}
-
-</script>
-
-</body>
-
-</html>
